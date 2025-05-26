@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "AllNote"
-  text: "All note"
-  tagline: My great project tagline
+  text: "All my note when learning something"
+  tagline:
   actions:
     - theme: brand
       text: Markdown Examples
@@ -15,11 +15,12 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: HTML-CSS
+    details:
+    link: /html-css/html-css.md
+  - title: JS
+    details:
+    link: /js/js.md
+  - title: Vue
+    details:
 ---
-
