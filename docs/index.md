@@ -8,19 +8,26 @@ hero:
   tagline:
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: All my note
+      link: html-css/index.md
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: GitHub
+      link: https://github.com/Minhtu12394/AllNote
 
 features:
-  - title: HTML-CSS
+  - icon:
+      src: /img/html.png
+    title: HTML-CSS
     details:
-    link: /html-css/html-css.md
-  - title: JS
+    link: /html-css/index.md
+  - icon:
+      src: /img/js.png
+    title: JS
     details:
-    link: /js/js.md
-  - title: Vue
+    link: /js/index.md
+  - icon:
+      src: /img/vue.png
+    title: Vue
     details:
+    link: vue/index.md
 ---
