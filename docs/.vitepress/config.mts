@@ -2,8 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "AllNote",
-  description: "All note",
+  title: "Hà Mã đi chơi",
+  description: "Chuẩn bị đồ cho em mã đi chơi",
   base: "/AllNote/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -21,13 +21,17 @@ export default defineConfig({
     },
     sidebar: [
       {
-        text: "All Note",
-        items: [
-          { text: "HTML-CSS", link: "html-css/index.md" },
-          { text: "JS", link: "js/index.md" },
-          { text: "Vue", link: "vue/index.md" },
-        ],
+        text: "Hà Mã đi chơi",
+        link: "/hama.md",
       },
+      // {
+      //   text: "All Note",
+      //   items: [
+      //     { text: "HTML-CSS", link: "html-css/index.md" },
+      //     { text: "JS", link: "js/index.md" },
+      //     { text: "Vue", link: "vue/index.md" },
+      //   ],
+      // },
     ],
   },
 });
