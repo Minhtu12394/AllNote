@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Hà Mã đi chơi",
+  title: "Home",
   description: "Chuẩn bị đồ cho em mã đi chơi",
   base: "/AllNote/",
   themeConfig: {
@@ -24,14 +24,24 @@ export default defineConfig({
         text: "Hà Mã đi chơi",
         link: "/hama.md",
       },
-      // {
-      //   text: "All Note",
-      //   items: [
-      //     { text: "HTML-CSS", link: "html-css/index.md" },
-      //     { text: "JS", link: "js/index.md" },
-      //     { text: "Vue", link: "vue/index.md" },
-      //   ],
-      // },
+      {
+        text: "All Note",
+        items: [
+          { text: "HTML-CSS", link: "html-css/index.md" },
+          { text: "JS", link: "js/index.md" },
+          {
+            text: "Vue",
+            link: "vue/index.md",
+            collapsed: true,
+            items: [
+              {
+                text: "Data binding and DOM reactive",
+                link: "vue/data_binding_and_dom.md",
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });

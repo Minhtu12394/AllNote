@@ -90,118 +90,120 @@ outline: deep
 
 ### 3. Màu sắc:
 
-- 3.1 Các cách chỉ định màu sắc:
+#### 3.1 Các cách chỉ định màu sắc:
 
-  - Tên màu: `red`, `green`, `blue`....
+- Tên màu: `red`, `green`, `blue`....
+  ```css
+  div {
+    color: red; /* Màu chữ đỏ */
+    background-color: lightblue; /* Màu nền xanh nhạt */
+  }
+  ```
+- Mã màu HEX: Mã màu HEX bao gồm 6 ký tự, với 2 ký tự đầu tiên cho màu đỏ, 2 ký tự tiếp theo cho màu xanh lá cây, và 2 ký tự cuối cùng cho màu xanh dương.
+  - Cú pháp đầy đủ: #RRGGBB
+  - Cú pháp rút gọn: #RGB
+  ```css
+  div {
+    color: #ff0000; /* Màu chữ đỏ */
+    background-color: #00ff00; /* Màu nền xanh lá cây */
+  }
+  ```
+- Giá trị `RGB`: Chỉ định màu bằng cách pha trộn ba màu đỏ (Red), xanh lá cây (Green), và xanh dương (Blue), với giá trị mỗi màu từ 0 đến 255.
+
+  - Cú pháp: `rgb(red, green, blue)`
+
     ```css
     div {
-      color: red; /* Màu chữ đỏ */
-      background-color: lightblue; /* Màu nền xanh nhạt */
+      color: rgb(255, 0, 0); /* Màu chữ đỏ */
+      background-color: rgb(0, 255, 0); /* Màu nền xanh lá cây */
     }
     ```
-  - Mã màu HEX: Mã màu HEX bao gồm 6 ký tự, với 2 ký tự đầu tiên cho màu đỏ, 2 ký tự tiếp theo cho màu xanh lá cây, và 2 ký tự cuối cùng cho màu xanh dương.
-    - Cú pháp đầy đủ: #RRGGBB
-    - Cú pháp rút gọn: #RGB
-    ```css
-    div {
-      color: #ff0000; /* Màu chữ đỏ */
-      background-color: #00ff00; /* Màu nền xanh lá cây */
-    }
-    ```
-  - Giá trị `RGB`: Chỉ định màu bằng cách pha trộn ba màu đỏ (Red), xanh lá cây (Green), và xanh dương (Blue), với giá trị mỗi màu từ 0 đến 255.
 
-    - Cú pháp: `rgb(red, green, blue)`
+- Giá trị `RGBA`: Mở rộng của `RGB` có thêm A(Alpha) để điều khiển độ trong suốt.
+
+  ```css
+  div {
+    background-color: rgba(
+      0,
+      0,
+      255,
+      0.5
+    ); /* Màu xanh dương với độ trong suốt 50% */
+  }
+  ```
+
+#### 3.2 Các thuộc tính màu sắc:
+
+- color: màu chữ.
+- background-color: màu nền
+- border-color: màu viền
+- background: cho phép sử dụng nhiều thuộc tính nền.
+
+#### 3.3 Hiệu ứng màu sắc:
+
+- Chuyển màu nền
+
+  - `linear-gradient`: Chuyển màu theo đường thẳng.
+
+    - Cú pháp: `linear-gradient(angle, color-stop1, color-stop2, ...)`
 
       ```css
       div {
-        color: rgb(255, 0, 0); /* Màu chữ đỏ */
-        background-color: rgb(0, 255, 0); /* Màu nền xanh lá cây */
+        background: linear-gradient(
+          90deg,
+          red,
+          yellow
+        ); /* Chuyển sắc từ đỏ sang vàng theo chiều ngang */
       }
       ```
 
-  - Giá trị `RGBA`: Mở rộng của `RGB` có thêm A(Alpha) để điều khiển độ trong suốt.
+  - `radial-gradient`: Chuyển màu theo hình tròn
 
-    ```css
-    div {
-      background-color: rgba(
-        0,
-        0,
-        255,
-        0.5
-      ); /* Màu xanh dương với độ trong suốt 50% */
-    }
-    ```
-
-- 3.2 Các thuộc tính màu sắc:
-  - color: màu chữ.
-  - background-color: màu nền
-  - border-color: màu viền
-  - background: cho phép sử dụng nhiều thuộc tính nền.
-- 3.3 Hiệu ứng màu sắc:
-
-  - Chuyển màu nền
-
-    - `linear-gradient`: Chuyển màu theo đường thẳng.
-
-      - Cú pháp: `linear-gradient(angle, color-stop1, color-stop2, ...)`
-
-        ```css
-        div {
-          background: linear-gradient(
-            90deg,
-            red,
-            yellow
-          ); /* Chuyển sắc từ đỏ sang vàng theo chiều ngang */
-        }
-        ```
-
-    - `radial-gradient`: Chuyển màu theo hình tròn
-
-      - Cú pháp: `radial-gradient(shape, color-stop1, color-stop2, ...)`
-
-        ```css
-        div {
-          background: radial-gradient(
-            circle,
-            red,
-            yellow
-          ); /* Chuyển sắc từ đỏ sang vàng theo hình tròn */
-        }
-        ```
-
-- 3.4 Hiệu ứng đổ bóng:
-
-  - `text-shadow` :tạo hiệu ứng bóng cho văn bản. Có thể chỉ định độ lệch ngang, độ lệch dọc, độ mờ, và màu sắc của bóng.
-
-    - Cú pháp: `text-shadow: offset-x offset-y blur-radius color;`
-
-      - `offset-x`: Đổ bóng theo chiều ngang
-      - `offset-y`: Đổ bóng theo chiều dọc
-      - `blur-radius`: độ mờ của bóng
+    - Cú pháp: `radial-gradient(shape, color-stop1, color-stop2, ...)`
 
       ```css
-      h1 {
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Bóng màu đen mờ, lệch 3px sang phải và xuống dưới */
-      }
-
-      h2 {
-        text-shadow: -4px -4px 2px blue; /* Bóng màu xanh, lệch 4px lên trên và sang trái */
+      div {
+        background: radial-gradient(
+          circle,
+          red,
+          yellow
+        ); /* Chuyển sắc từ đỏ sang vàng theo hình tròn */
       }
       ```
 
-  - `box-shadow` :tạo hiệu ứng bóng cho các phần tử dạng khối như `div`. Bạn có thể chỉ định độ lệch ngang, độ lệch dọc, độ mờ, và màu sắc của bóng. - Cú pháp: `box-shadow: offset-x offset-y blur-radius spread-radius color;` - `spread-radius`: Xác định độ mở rộng của bóng. Giá trị dương làm bóng mở rộng ra ngoài phần tử, giá trị âm thu nhỏ bóng vào bên trong phần tử.
+#### 3.4 Hiệu ứng đổ bóng:
+
+- `text-shadow` :tạo hiệu ứng bóng cho văn bản. Có thể chỉ định độ lệch ngang, độ lệch dọc, độ mờ, và màu sắc của bóng.
+
+  - Cú pháp: `text-shadow: offset-x offset-y blur-radius color;`
+
+    - `offset-x`: Đổ bóng theo chiều ngang
+    - `offset-y`: Đổ bóng theo chiều dọc
+    - `blur-radius`: độ mờ của bóng
 
     ```css
-    /* Bóng lệch 5px xuống dưới và 5px sang phải*/
-    mờ 10px -- > div {
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    h1 {
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Bóng màu đen mờ, lệch 3px sang phải và xuống dưới */
     }
 
-    /* Bóng lệch 8px sang phải, 4px xuống dưới, mờ 15px, mở rộng ra 5px */
-    button {
-      box-shadow: 8px 4px 15px 5px rgba(0, 0, 255, 0.5);
+    h2 {
+      text-shadow: -4px -4px 2px blue; /* Bóng màu xanh, lệch 4px lên trên và sang trái */
     }
     ```
+
+- `box-shadow` :tạo hiệu ứng bóng cho các phần tử dạng khối như `div`. Bạn có thể chỉ định độ lệch ngang, độ lệch dọc, độ mờ, và màu sắc của bóng. - Cú pháp: `box-shadow: offset-x offset-y blur-radius spread-radius color;` - `spread-radius`: Xác định độ mở rộng của bóng. Giá trị dương làm bóng mở rộng ra ngoài phần tử, giá trị âm thu nhỏ bóng vào bên trong phần tử.
+
+  ```css
+  /* Bóng lệch 5px xuống dưới và 5px sang phải*/
+  mờ 10px -- > div {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Bóng lệch 8px sang phải, 4px xuống dưới, mờ 15px, mở rộng ra 5px */
+  button {
+    box-shadow: 8px 4px 15px 5px rgba(0, 0, 255, 0.5);
+  }
+  ```
 
 ### 4. Animation:
 
